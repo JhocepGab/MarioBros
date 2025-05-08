@@ -11,19 +11,14 @@ namespace MarioBros
     {
         static void Main(string[] args)
         {
-            ReproducirTemaMario();
-        }
+            int[] notas = { 659, 659, 659, 523, 659, 784, 392, 523, 392, 330, 440, 494, 466, 440, 392, 659, 784, 880, 698, 784, 659, 523, 587, 494, 523, 392, 330, 440, 494, 466, 440, 392 };
+            int duracion = 200; // Duración de cada nota en milisegundos
 
-        static void ReproducirTemaMario()
-        {
-            // Notas y duraciones en milisegundos
-            int[] notas = { 659, 659, 659, 523, 659, 784, 392, 523, 392, 330, 440, 494, 466, 440, 392, 659, 784, 880, 698, 784, 659, 523, 587, 494 };
-            int duracion = 125;
-
-            foreach (int frecuencia in notas)
+            // Reproducir las notas
+            foreach (int nota in notas)
             {
-                Console.Beep(frecuencia, duracion);
-                Thread.Sleep(duracion);
+                Console.Beep(nota, duracion);
+                Thread.Sleep(50); // Pausa entre notas
             }
         }
     }
